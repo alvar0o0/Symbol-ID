@@ -1,0 +1,21 @@
+5. **Estructura de commits profesional**:
+Usar prefijos estándar:
+- `feat:` nueva funcionalidad
+- `fix:` corrección de bugs
+- `docs:` cambios en documentación
+- `test:` añadir o modificar tests
+- `refactor:` refactorización de código
+- `chore:` mantenimiento general
+
+6. **Issues en GitHub**:
+- Crear issues para features pendientes
+- Usar labels (enhancement, bug, etc.)
+- Vincular PRs con issues
+
+7. **GitHub Profile**:
+- Pinear este repositorio en tu perfil
+- Mantener el README actualizado
+- Documentar bien el progreso
+- Añadir badges (tests passing, coverage, etc.)
+
+¿Te gustaría que te ayude a configurar algo específico de esto? ¿Quizás empezar con la estructura base del repo?
