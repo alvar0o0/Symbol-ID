@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header">
+                <h2>Symbol Identifier</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('main.index') }}">
+                    <div class="mb-3">
+                        <label for="symbol" class="form-label">Enter Symbol:</label>
+                        <input type="text" class="form-control" id="symbol" name="symbol" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Identify</button>
+                </form>
+
+                {% if matches %}
+                <div class="mt-4">
+                    <h3>Results for: {{ symbol }}</h3>
+                    
+                    {% if matches.exact %}
+                    <div class="mb-3">
+                        <h4>Exact Matches:</h4>
+                        <ul class="list-group">
+                        {% for match in matches.exact %}
+                            <li class="list-group-item">{{ match }}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+                    {% if matches.case_insensitive %}
+                    <div class="mb-3">
+                        <h4>Case Insensitive Matches:</h4>
+                        <ul class="list-group">
+                        {% for match in matches.case_insensitive %}
+                            <li class="list-group-item">{{ match }}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+                    {% if matches.contains %}
+                    <div class="mb-3">
+                        <h4>Similar Matches:</h4>
+                        <ul class="list-group">
+                        {% for match in matches.contains %}
+                            <li class="list-group-item">{{ match }}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

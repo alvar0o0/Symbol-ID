@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header">
+                <h2>Add New Symbol</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="original_symbol" class="form-label">Original Symbol:</label>
+                        <input type="text" class="form-control" id="original_symbol" name="original_symbol" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="vendor_symbol" class="form-label">Vendor Symbol:</label>
+                        <input type="text" class="form-control" id="vendor_symbol" name="vendor_symbol" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="vendor" class="form-label">Vendor:</label>
+                        <input type="text" class="form-control" id="vendor" name="vendor" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Symbol</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
